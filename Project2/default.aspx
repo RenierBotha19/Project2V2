@@ -21,7 +21,7 @@
     <form id="form1" runat="server">
         <div class="auto-style1">
             <div class="auto-style1">
-                <asp:Label ID="lblHeading" runat="server" CssClass="auto-style3" Font-Bold="True" Font-Size="XX-Large" Text="Welcome"></asp:Label>
+                <asp:Label ID="lblHeading" runat="server" CssClass="auto-style3" Font-Bold="True" Font-Size="XX-Large" Text="WELCOME"></asp:Label>
                 <br />
                 <br />
                 <br />
@@ -34,7 +34,7 @@
             <br />
             <p>
                 <asp:Label ID="lblPw" runat="server" Font-Bold="True" Font-Size="Medium" Text="Password:"></asp:Label>
-                <asp:TextBox ID="txtPw" runat="server" Font-Size="Large" Width="150px"></asp:TextBox>
+                <asp:TextBox ID="txtPw" runat="server" Font-Size="Large" Width="150px" TextMode="Password"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtPw" ErrorMessage="RequiredFieldValidator" Font-Bold="True" Font-Size="Large" ForeColor="Red">*</asp:RequiredFieldValidator>
             </p>
             <p>
@@ -49,7 +49,7 @@
                 <asp:HyperLink ID="HyperLink1" runat="server" Font-Bold="True" Font-Italic="True" Font-Size="Medium" Font-Underline="True" ForeColor="Blue" NavigateUrl="~/Forget.aspx">Forgot Password?</asp:HyperLink>
             </p>
             <div class="auto-style2">
-                <asp:HyperLink ID="HyperLink2" runat="server" Font-Bold="True" Font-Italic="True" Font-Size="Medium" Font-Underline="True" ForeColor="Blue">Sign Up</asp:HyperLink>
+                <asp:HyperLink ID="HyperLink2" runat="server" Font-Bold="True" Font-Italic="True" Font-Size="Medium" Font-Underline="True" ForeColor="Blue" NavigateUrl="~/SignUp.aspx">Sign Up</asp:HyperLink>
             </div>
         </div>
     </form>

@@ -25,10 +25,6 @@
         .auto-style18 {
             width: 150px;
         }
-        .auto-style19 {
-            width: 151px;
-            text-align: left;
-        }
         .auto-style20 {
             width: 151px;
         }
@@ -46,13 +42,21 @@
             width: 226px;
             text-align: right;
         }
+        .auto-style26 {
+            width: 450px;
+            font-size: medium;
+        }
+        .auto-style27 {
+            width: 151px;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
         <div class="auto-style1">
             <strong>
-            <asp:Label ID="lblForget" runat="server" CssClass="auto-style2" Text="FORGOTTEN PASSWORD?"></asp:Label>
+            <asp:Label ID="lblForget" runat="server" CssClass="auto-style2" Text="FORGOT PASSWORD?"></asp:Label>
             <br />
             <br />
             <br />
@@ -60,12 +64,12 @@
             <br />
             </strong>
         </div>
-        <table align="center" class="auto-style10">
+        <table align="center" class="auto-style26">
             <tr>
                 <td class="auto-style18">
                     <asp:Label ID="lblName" runat="server" Font-Bold="True" Font-Size="Medium" Text="Name:"></asp:Label>
                 </td>
-                <td class="auto-style19">
+                <td class="auto-style27">
                     <asp:TextBox ID="txtName" runat="server" Font-Size="Medium" Width="180px"></asp:TextBox>
                 </td>
                 <td class="auto-style20">
@@ -79,7 +83,7 @@
                 <td class="auto-style18">
                     <asp:Label ID="lblSurname" runat="server" Font-Bold="True" Font-Size="Medium" Text="Surname:"></asp:Label>
                 </td>
-                <td class="auto-style19">
+                <td class="auto-style27">
                     <asp:TextBox ID="txtSurname" runat="server" Font-Size="Medium" Width="180px"></asp:TextBox>
                 </td>
                 <td class="auto-style20">
@@ -93,7 +97,7 @@
                 <td class="auto-style18">
                     <asp:Label ID="lblEmail" runat="server" Font-Bold="True" Font-Size="Medium" Text="Email:"></asp:Label>
                 </td>
-                <td class="auto-style19">
+                <td class="auto-style27">
                     <asp:TextBox ID="txtEmail" runat="server" Font-Size="Medium" Width="180px"></asp:TextBox>
                 </td>
                 <td class="auto-style20">
@@ -109,8 +113,8 @@
                 <td class="auto-style18">
                     <asp:Label ID="lblCell" runat="server" Font-Bold="True" Font-Size="Medium" Text="Cell No:"></asp:Label>
                 </td>
-                <td class="auto-style19">
-                    <asp:TextBox ID="txtCell" runat="server" Font-Size="Medium" Width="180px"></asp:TextBox>
+                <td class="auto-style27">
+                    <asp:TextBox ID="txtCell" runat="server" Font-Size="Medium" Width="180px" MaxLength="10" TextMode="Phone"></asp:TextBox>
                 </td>
                 <td class="auto-style20">
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="txtCell" ErrorMessage="RequiredFieldValidator" Font-Bold="True" Font-Size="Large" ForeColor="Red">*</asp:RequiredFieldValidator>
