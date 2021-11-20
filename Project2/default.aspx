@@ -40,7 +40,7 @@
             <p>
                 <asp:Label ID="lblError" runat="server" Font-Bold="True" Font-Size="Medium" ForeColor="Red"></asp:Label>
             </p>
-            <asp:Button ID="btnLogin" runat="server" Text="Login" />
+            <asp:Button ID="btnLogin" runat="server" Text="Login" OnClick="btnLogin_Click" Width="100px" />
             <br />
             <br />
             <br />
