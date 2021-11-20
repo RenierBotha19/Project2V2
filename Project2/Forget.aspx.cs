@@ -25,9 +25,10 @@ namespace Project2
             string surname = txtSurname.Text;
             string email = txtEmail.Text;
             string cell = txtCell.Text;
+            string ID = txtID.Text;
 
-            string myState = "SELECT Count(*) FROM Users WHERE Name = '" + name + "'and Surname = '" + surname + "'and Email = '" + email + "'and CellNr = '" + cell + "'";
-            string myState2 = "SELECT * FROM Users WHERE Name = '" + name + "'and Surname = '" + surname + "'and Email = '" + email + "'and CellNr = '" + cell + "'";
+            string myState = "SELECT Count(*) FROM Users WHERE Name = '" + name + "'and Surname = '" + surname + "'and Email = '" + email + "'and CellNr = '" + cell + "'and ID ='" + ID + "'";
+            string myState2 = "SELECT * FROM Users WHERE Name = '" + name + "'and Surname = '" + surname + "'and Email = '" + email + "'and CellNr = '" + cell + "'and ID ='" + ID + "'";
 
             con = new SqlConnection(Session["MyDB"].ToString());
             con.Open();
@@ -46,7 +47,6 @@ namespace Project2
                 lblWrong.ForeColor = System.Drawing.Color.Blue;
                 lblWrong.Text = name + ", your password is: " + read.GetString(4); // if the input is correct it will show the user password
                 con.Close();
-                btnHome.Enabled = true;
             }
             else
             {

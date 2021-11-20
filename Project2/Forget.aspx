@@ -28,19 +28,13 @@
         .auto-style20 {
             width: 151px;
         }
-        .auto-style23 {
-            height: 23px;
-            width: 226px;
-            text-align: left;
-        }
         .auto-style24 {
             height: 26px;
             text-align: center;
         }
         .auto-style25 {
             height: 23px;
-            width: 226px;
-            text-align: right;
+            text-align: center;
         }
         .auto-style26 {
             width: 450px;
@@ -111,7 +105,7 @@
             </tr>
             <tr>
                 <td class="auto-style18">
-                    <asp:Label ID="lblCell" runat="server" Font-Bold="True" Font-Size="Medium" Text="Cell No:"></asp:Label>
+                    <asp:Label ID="lblCell" runat="server" Font-Bold="True" Font-Size="Medium" Text="Cell Nr:"></asp:Label>
                 </td>
                 <td class="auto-style27">
                     <asp:TextBox ID="txtCell" runat="server" Font-Size="Medium" Width="180px" MaxLength="10" TextMode="Phone"></asp:TextBox>
@@ -123,6 +117,17 @@
             <tr>
                 <td class="auto-style5" colspan="3"></td>
             </tr>
+            <tr>
+                <td class="auto-style5">
+                    <asp:Label ID="lblID" runat="server" Font-Bold="True" Font-Size="Medium" Text="ID:"></asp:Label>
+                </td>
+                <td class="auto-style5">
+                    <asp:TextBox ID="txtID" runat="server" Font-Size="Medium" Width="180px" MaxLength="10" TextMode="Phone"></asp:TextBox>
+                </td>
+                <td class="auto-style5">
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="txtID" ErrorMessage="RequiredFieldValidator" Font-Bold="True" Font-Size="Large" ForeColor="Red">*</asp:RequiredFieldValidator>
+                </td>
+            </tr>
         </table>
         <p>
         </p>
@@ -131,15 +136,14 @@
                 <td class="auto-style25">
                     <asp:Button ID="btnRecover" runat="server" Text="Recover" Width="100px" OnClick="btnRecover_Click" />
                 </td>
-                <td class="auto-style23">
-                    <asp:Button ID="btnHome" runat="server" Enabled="False" Text="Home" Width="100px" OnClick="btnHome_Click" />
+            </tr>
+            <tr>
+                <td class="auto-style9">
+                    <asp:HyperLink ID="HyperLink1" runat="server" Font-Bold="True" Font-Italic="True" Font-Size="Medium" Font-Underline="True" ForeColor="Blue" NavigateUrl="~/default.aspx">Home</asp:HyperLink>
                 </td>
             </tr>
             <tr>
-                <td class="auto-style9" colspan="2">&nbsp;</td>
-            </tr>
-            <tr>
-                <td class="auto-style24" colspan="2">
+                <td class="auto-style24">
                     <asp:Label ID="lblWrong" runat="server" Font-Bold="True" Font-Size="Large" ForeColor="Red"></asp:Label>
                 </td>
             </tr>

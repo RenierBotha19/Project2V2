@@ -33,6 +33,10 @@
             width: 100px;
             text-align: left;
         }
+        .auto-style14 {
+            height: 23px;
+            text-align: left;
+        }
     </style>
 </head>
 <body>
@@ -55,6 +59,7 @@
                         <asp:TextBox ID="txtName" runat="server" Font-Size="Medium" Width="180px"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="txtName" ErrorMessage="RequiredFieldValidator" Font-Bold="True" Font-Size="Large" ForeColor="Red">*</asp:RequiredFieldValidator>
                         <br />
+                        <br />
                     </td>
                 </tr>
                 <tr>
@@ -67,6 +72,7 @@
                     <td class="auto-style6">
                         <asp:TextBox ID="txtSurname" runat="server" Font-Size="Medium" Width="180px"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ControlToValidate="txtSurname" ErrorMessage="RequiredFieldValidator" Font-Bold="True" Font-Size="Large" ForeColor="Red">*</asp:RequiredFieldValidator>
+                        <br />
                         <br />
                     </td>
                 </tr>
@@ -95,6 +101,20 @@
                         <asp:TextBox ID="txtCell" runat="server" Font-Size="Medium" MaxLength="10" Width="180px"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" ControlToValidate="txtCell" ErrorMessage="RequiredFieldValidator" Font-Bold="True" Font-Size="Large" ForeColor="Red">*</asp:RequiredFieldValidator>
                         <br />
+                        <br />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="auto-style4" colspan="2"></td>
+                </tr>
+                <tr>
+                    <td class="auto-style14">
+                        <asp:Label ID="lblID" runat="server" Font-Bold="True" Font-Size="Medium" Text="ID Number:"></asp:Label>
+                    </td>
+                    <td class="auto-style14">
+                        <asp:TextBox ID="txtID" runat="server" Font-Size="Medium" MaxLength="13" Width="180px"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator11" runat="server" ControlToValidate="txtID" ErrorMessage="RequiredFieldValidator" Font-Bold="True" Font-Size="Large" ForeColor="Red">*</asp:RequiredFieldValidator>
+                        <br />
                     </td>
                 </tr>
                 <tr>
@@ -105,10 +125,10 @@
                         <asp:Label ID="lblPW" runat="server" Font-Bold="True" Font-Size="Medium" Text="Password:"></asp:Label>
                     </td>
                     <td class="auto-style6">
-                        <asp:TextBox ID="txtPassword" runat="server" Font-Size="Medium" TextMode="Password" Width="180px"></asp:TextBox>
+                        <asp:TextBox ID="txtPassword" runat="server" Font-Size="Medium" TextMode="Password" Width="180px" MaxLength="20"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator10" runat="server" ControlToValidate="txtPassword" ErrorMessage="RequiredFieldValidator" Font-Bold="True" Font-Size="Large" ForeColor="Red">*</asp:RequiredFieldValidator>
                         <br />
-                        <asp:RangeValidator ID="RangeValidator1" runat="server" ControlToValidate="txtPassword" ErrorMessage="RangeValidator" Font-Bold="True" Font-Size="Medium" ForeColor="Red" MaximumValue="8">Password to short</asp:RangeValidator>
+                        <br />
                     </td>
                 </tr>
                 <tr>
@@ -130,7 +150,7 @@
             <table align="center" class="auto-style10">
                 <tr>
                     <td class="auto-style13">
-                        <asp:Button ID="btnRegister" runat="server" Text="Register" Width="100px" />
+                        <asp:Button ID="btnRegister" runat="server" Text="Register" Width="100px" OnClick="btnRegister_Click" />
                     </td>
                     <td class="auto-style12">
                         <asp:Button ID="btnProceed" runat="server" Enabled="False" Text="Proceed" Width="100px" />
