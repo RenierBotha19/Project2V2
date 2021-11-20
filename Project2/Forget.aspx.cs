@@ -43,6 +43,7 @@ namespace Project2
                 com = new SqlCommand(myState2, con);
                 SqlDataReader read = com.ExecuteReader();
                 read.Read();
+                lblWrong.ForeColor = System.Drawing.Color.Blue;
                 lblWrong.Text = name + ", your password is: " + read.GetString(4); // if the input is correct it will show the user password
                 con.Close();
                 btnHome.Enabled = true;
