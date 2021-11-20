@@ -129,10 +129,10 @@
         <table align="center" class="auto-style10">
             <tr>
                 <td class="auto-style25">
-                    <asp:Button ID="btnRecover" runat="server" Text="Recover" Width="100px" />
+                    <asp:Button ID="btnRecover" runat="server" Text="Recover" Width="100px" OnClick="btnRecover_Click" />
                 </td>
                 <td class="auto-style23">
-                    <asp:Button ID="btnHome" runat="server" Enabled="False" Text="Home" Width="100px" />
+                    <asp:Button ID="btnHome" runat="server" Enabled="False" Text="Home" Width="100px" OnClick="btnHome_Click" />
                 </td>
             </tr>
             <tr>
