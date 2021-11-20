@@ -122,7 +122,7 @@
                     <asp:Label ID="lblID" runat="server" Font-Bold="True" Font-Size="Medium" Text="ID:"></asp:Label>
                 </td>
                 <td class="auto-style5">
-                    <asp:TextBox ID="txtID" runat="server" Font-Size="Medium" Width="180px" MaxLength="10" TextMode="Phone"></asp:TextBox>
+                    <asp:TextBox ID="txtID" runat="server" Font-Size="Medium" Width="180px" MaxLength="13" TextMode="Phone"></asp:TextBox>
                 </td>
                 <td class="auto-style5">
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="txtID" ErrorMessage="RequiredFieldValidator" Font-Bold="True" Font-Size="Large" ForeColor="Red">*</asp:RequiredFieldValidator>

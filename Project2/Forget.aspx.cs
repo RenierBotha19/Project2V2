@@ -27,8 +27,8 @@ namespace Project2
             string cell = txtCell.Text;
             string ID = txtID.Text;
 
-            string myState = "SELECT Count(*) FROM Users WHERE Name = '" + name + "'and Surname = '" + surname + "'and Email = '" + email + "'and CellNr = '" + cell + "'and ID ='" + ID + "'";
-            string myState2 = "SELECT * FROM Users WHERE Name = '" + name + "'and Surname = '" + surname + "'and Email = '" + email + "'and CellNr = '" + cell + "'and ID ='" + ID + "'";
+            string myState = "SELECT Count(*) FROM Users WHERE Name = '" + name + "'and Surname = '" + surname + "'and Email = '" + email + "'and CellNr = '" + cell + "'and Ident ='" + ID + "'";
+            string myState2 = "SELECT * FROM Users WHERE Name = '" + name + "'and Surname = '" + surname + "'and Email = '" + email + "'and CellNr = '" + cell + "'and Ident ='" + ID + "'";
 
             con = new SqlConnection(Session["MyDB"].ToString());
             con.Open();
@@ -47,17 +47,13 @@ namespace Project2
                 lblWrong.ForeColor = System.Drawing.Color.Blue;
                 lblWrong.Text = name + ", your password is: " + read.GetString(4); // if the input is correct it will show the user password
                 con.Close();
+                btnRecover.Visible = false;
             }
             else
             {
                 lblWrong.Text = "Try again/User not found"; // If the input is wrog this message will be displayed
             }
 
-        }
-
-        protected void btnHome_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("default.aspx");
         }
     }
 }

@@ -26,13 +26,15 @@ namespace Project2
             string email = txtEmail.Text;
             string cell = txtCell.Text;
             string pw = txtCon.Text;
+            string ident = txtID.Text;
             int id = 0;
+
             int tesv = 0;
             bool validNum = false;
 
-            string myState = "SELECT Count(*) FROM Users WHERE Name = '" + name + "'and Surname = '" + surname + "'and Email = '" + email + "'and CellNr = '" + cell + "'and ID ='" + ID + "'";
+            string myState = "SELECT Count(*) FROM Users WHERE Name = '" + name + "'and Surname = '" + surname + "'or Email = '" + email + "'or CellNr = '" + cell + "'or Ident ='" + ident + "'";
             string myPW = "SELECT * FROM Users";
-            string insert = "INSERT INTO Users VALUES (@UserId,@Name,@Surname,@Email,@Password,@CellNr,@ID)";
+            string insert = "INSERT INTO Users VALUES (@UserId,@Name,@Surname,@Email,@Password,@CellNr,@Ident)";
 
             con = new SqlConnection(Session["MyDB"].ToString());
             con.Open();
@@ -102,14 +104,16 @@ namespace Project2
                         com.Parameters.AddWithValue("@Email", email);
                         com.Parameters.AddWithValue("@Password", pw);
                         com.Parameters.AddWithValue("@CellNr", cell);
-                        com.Parameters.AddWithValue("@ID", id);
+                        com.Parameters.AddWithValue("@Ident", ident);
                         com.ExecuteNonQuery();
                         con.Close(); // The user gets added into the database
 
                         lblDisplay.ForeColor = System.Drawing.Color.Blue;
                         Session["MyDB"] = id.ToString();
                         lblDisplay.Text = "Welcome " + name + " " + surname;
-                        btnProceed.Enabled = true;
+                        HyperLink1.Visible = true;
+                        HyperLink1.Enabled = true;
+                        btnRegister.Visible = false;
                     }
                 }
             }
