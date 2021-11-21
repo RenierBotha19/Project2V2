@@ -109,7 +109,7 @@ namespace Project2
                         con.Close(); // The user gets added into the database
 
                         lblDisplay.ForeColor = System.Drawing.Color.Blue;
-                        Session["MyDB"] = id.ToString();
+                        Session["UserID"] = id.ToString();
                         lblDisplay.Text = "Welcome " + name + " " + surname;
                         HyperLink1.Visible = true;
                         HyperLink1.Enabled = true;

@@ -56,7 +56,7 @@
                         <asp:Label ID="lblName" runat="server" Font-Bold="True" Font-Size="Medium" Text="Name:"></asp:Label>
                     </td>
                     <td class="auto-style6">
-                        <asp:TextBox ID="txtName" runat="server" Font-Size="Medium" Width="180px" OnTextChanged="txtName_TextChanged"></asp:TextBox>
+                        <asp:TextBox ID="txtName" runat="server" Font-Size="Medium" Width="180px"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="txtName" ErrorMessage="RequiredFieldValidator" Font-Bold="True" Font-Size="Large" ForeColor="Red">*</asp:RequiredFieldValidator>
                         <br />
                         <br />
@@ -70,7 +70,7 @@
                         <asp:Label ID="lblSurname" runat="server" Font-Bold="True" Font-Size="Medium" Text="Surname:"></asp:Label>
                     </td>
                     <td class="auto-style6">
-                        <asp:TextBox ID="txtSurname" runat="server" Font-Size="Medium" Width="180px" OnTextChanged="txtSurname_TextChanged"></asp:TextBox>
+                        <asp:TextBox ID="txtSurname" runat="server" Font-Size="Medium" Width="180px"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ControlToValidate="txtSurname" ErrorMessage="RequiredFieldValidator" Font-Bold="True" Font-Size="Large" ForeColor="Red">*</asp:RequiredFieldValidator>
                         <br />
                         <br />
@@ -84,7 +84,7 @@
                         <asp:Label ID="lblEmail" runat="server" Font-Bold="True" Font-Size="Medium" Text="Email:"></asp:Label>
                     </td>
                     <td class="auto-style6">
-                        <asp:TextBox ID="txtEmail" runat="server" Font-Size="Medium" TextMode="Email" Width="180px" OnTextChanged="txtEmail_TextChanged"></asp:TextBox>
+                        <asp:TextBox ID="txtEmail" runat="server" Font-Size="Medium" TextMode="Email" Width="180px"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ControlToValidate="txtEmail" ErrorMessage="RequiredFieldValidator" Font-Bold="True" Font-Size="Large" ForeColor="Red">*</asp:RequiredFieldValidator>
                         <br />
                         <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="txtEmail" ErrorMessage="RegularExpressionValidator" Font-Bold="True" Font-Size="Medium" ForeColor="Red" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*">Incorrect Format</asp:RegularExpressionValidator>
@@ -98,7 +98,7 @@
                         <asp:Label ID="lblCell" runat="server" Font-Bold="True" Font-Size="Medium" Text="Cell Nr:"></asp:Label>
                     </td>
                     <td class="auto-style6">
-                        <asp:TextBox ID="txtCell" runat="server" Font-Size="Medium" MaxLength="10" Width="180px" OnTextChanged="txtCell_TextChanged"></asp:TextBox>
+                        <asp:TextBox ID="txtCell" runat="server" Font-Size="Medium" MaxLength="10" Width="180px"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" ControlToValidate="txtCell" ErrorMessage="RequiredFieldValidator" Font-Bold="True" Font-Size="Large" ForeColor="Red">*</asp:RequiredFieldValidator>
                         <br />
                         <br />
@@ -112,7 +112,7 @@
                         <asp:Label ID="lblID" runat="server" Font-Bold="True" Font-Size="Medium" Text="ID Number:"></asp:Label>
                     </td>
                     <td class="auto-style14">
-                        <asp:TextBox ID="txtID" runat="server" Font-Size="Medium" MaxLength="13" Width="180px" OnTextChanged="txtID_TextChanged"></asp:TextBox>
+                        <asp:TextBox ID="txtID" runat="server" Font-Size="Medium" MaxLength="13" Width="180px"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator11" runat="server" ControlToValidate="txtID" ErrorMessage="RequiredFieldValidator" Font-Bold="True" Font-Size="Large" ForeColor="Red">*</asp:RequiredFieldValidator>
                         <br />
                     </td>
