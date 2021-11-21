@@ -31,7 +31,6 @@ namespace Project2
 
             lblHeading.Text = Name + ", Please select where you would like to navigate";
 
-
         }
 
         protected void radEdit_CheckedChanged(object sender, EventArgs e)

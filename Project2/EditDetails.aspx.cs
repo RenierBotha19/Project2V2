@@ -79,7 +79,7 @@ namespace Project2
                 RegularExpressionValidator1.Enabled = true;
                 txtEnter.TextMode = TextBoxMode.SingleLine;
                 txtConf.TextMode = TextBoxMode.SingleLine;
-                Selection("Please enter your new email", "Please confirm your new email");
+                Selection("Please enter your new email:", "Please confirm your new email:");
             }
             else if (this.RadCell.Checked)
             {
@@ -87,7 +87,7 @@ namespace Project2
                 RegularExpressionValidator1.Enabled = false;
                 txtEnter.TextMode = TextBoxMode.SingleLine;
                 txtConf.TextMode = TextBoxMode.SingleLine;
-                Selection("Please enter your new cellphone number", "Please confirm your new cellphone number");
+                Selection("Please enter your new cellphone number:", "Please confirm your new cellphone number:");
             }
             else if (this.radPassword.Checked)
             {
@@ -95,7 +95,7 @@ namespace Project2
                 txtConf.TextMode = TextBoxMode.Password;
                 RegularExpressionValidator1.Visible = false;
                 RegularExpressionValidator1.Enabled = false;
-                Selection("Please enter your new password", "Please confirm your new password");
+                Selection("Please enter your new password:", "Please confirm your new password:");
             }
 
         }

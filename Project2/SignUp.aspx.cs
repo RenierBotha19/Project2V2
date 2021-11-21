@@ -28,7 +28,6 @@ namespace Project2
             string pw = txtCon.Text;
             string ident = txtID.Text;
             int id = 0;
-
             int tesv = 0;
             bool validNum = false;
 
