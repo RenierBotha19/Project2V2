@@ -23,8 +23,10 @@
         <br />
         <br />
         <asp:FileUpload ID="FileUpload1" runat="server" Font-Bold="True" Font-Size="Medium" />
+        <br /><br />
         <p>
             <asp:Button ID="BtnUplaod" runat="server" OnClick="Button1_Click" Text="Upload" Width="100px" />
+            <br /><br />
         </p>
         <p>
             <asp:Label ID="lblDisplay" runat="server" Font-Bold="True" Font-Size="Medium"></asp:Label>

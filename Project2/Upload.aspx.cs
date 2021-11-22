@@ -40,7 +40,11 @@ namespace Project2
 
             if (FileUpload1.HasFile)
             {
+
                 string ext = System.IO.Path.GetExtension(FileUpload1.FileName).ToLower();
+                string PhysicalPath = Server.MapPath("~/Data/");
+                if (!Directory.Exists(PhysicalPath)) ;
+                Directory.CreateDirectory(PhysicalPath);
                 if (ext == ".bmp" || ext == ".ico" || ext == ".jpeg" || ext == ".jpg" || ext == ".gif" || ext == ".tiff" || ext == ".png")
                 {
                     PicName = FileUpload1.FileName;
@@ -75,7 +79,10 @@ namespace Project2
                     com.ExecuteNonQuery();
                     con.Close();
                     Session["PicID"] = id;
-                    FileUpload1.PostedFile.SaveAs(Server.MapPath("~/Data/") + FileUpload1.FileName);
+                    foreach (HttpPostedFile file in FileUpload1.PostedFiles)
+                    {
+                        file.SaveAs(PhysicalPath + file.FileName);
+                    }
                     lblDisplay.Text = "File uploaded successfully";
                     BtnUplaod.Enabled = false;
                     HyperLink1.Enabled = false;
