@@ -19,6 +19,19 @@ namespace Project2
         public DataTable dt;
         public string state;
 
+        private string encrypt(string str)
+        {
+            string _result = string.Empty;
+            char[] temp = str.ToCharArray();
+            foreach (var _singleChar in temp)
+            {
+                var i = (int)_singleChar;
+                i = i - 2;
+                _result += (char)i;
+            }
+            return _result;
+        }
+
         private void Test(string myState, string sql, string details)
         {
             string thisCon = Session["MyDB"].ToString();
@@ -140,6 +153,7 @@ namespace Project2
                 }
                 else
                 {
+                    details = encrypt(txtConf.Text);
                     Test("SELECT Count(*) FROM Users WHERE Password = '" + details + "'", "Update Users SET Password = @details WHERE UserID = @userid", details);
                 }
             }
