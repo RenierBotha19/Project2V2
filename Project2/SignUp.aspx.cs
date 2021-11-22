@@ -18,6 +18,19 @@ namespace Project2
         public DataTable dt;
         public SqlDataReader datRead;
 
+        private string encrypt(string str)
+        {
+            string _result = string.Empty;
+            char[] temp = str.ToCharArray();
+            foreach (var _singleChar in temp)
+            {
+                var i = (int)_singleChar;
+                i = i - 2;
+                _result += (char)i;
+            }
+            return _result;
+        }
+
         protected void btnRegister_Click(object sender, EventArgs e)
         {
             lblDisplay.Text = "";
@@ -95,13 +108,15 @@ namespace Project2
                         } while (validNum == false);
                         con.Close();
 
+
+                        string ePW = encrypt(pw);
                         con.Open();
                         com = new SqlCommand(insert, con);
                         com.Parameters.AddWithValue("@UserId", id);
                         com.Parameters.AddWithValue("@Name", name);
                         com.Parameters.AddWithValue("@Surname", surname);
                         com.Parameters.AddWithValue("@Email", email);
-                        com.Parameters.AddWithValue("@Password", pw);
+                        com.Parameters.AddWithValue("@Password", ePW);
                         com.Parameters.AddWithValue("@CellNr", cell);
                         com.Parameters.AddWithValue("@Ident", ident);
                         com.ExecuteNonQuery();
@@ -109,13 +124,18 @@ namespace Project2
 
                         lblDisplay.ForeColor = System.Drawing.Color.Blue;
                         Session["UserID"] = id.ToString();
-                        lblDisplay.Text = "Welcome " + name + " " + surname;
+                        lblDisplay.Text = "Welcome, " + name + " " + surname;
                         HyperLink1.Visible = true;
                         HyperLink1.Enabled = true;
                         btnRegister.Visible = false;
                     }
                 }
             }
+        }
+
+        protected void Page_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

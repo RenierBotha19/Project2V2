@@ -9,10 +9,6 @@
         .auto-style1 {
             text-align: center;
         }
-        .auto-style2 {
-            width: 229px;
-            height: 135px;
-        }
         .auto-style3 {
             width: 104px;
         }
@@ -28,16 +24,27 @@
         </div>
         <asp:HyperLink ID="HyperLink1" runat="server" Font-Bold="True" Font-Size="Medium" ForeColor="Blue" NavigateUrl="~/Main.aspx">Main Menu</asp:HyperLink>
         <br />
-        <asp:GridView ID="GridView1" runat="server">
-            <Columns>
-                <asp:TemplateField></asp:TemplateField>
-            </Columns>
+        <br />
+        <asp:GridView ID="myGrid" runat="server" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" CellSpacing="2" ForeColor="Black">
+            <FooterStyle BackColor="#CCCCCC" />
+            <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
+            <PagerStyle BackColor="#CCCCCC" ForeColor="Black" HorizontalAlign="Left" />
+            <RowStyle BackColor="White" />
+            <SelectedRowStyle BackColor="#000099" Font-Bold="True" ForeColor="White" />
+            <SortedAscendingCellStyle BackColor="#F1F1F1" />
+            <SortedAscendingHeaderStyle BackColor="Gray" />
+            <SortedDescendingCellStyle BackColor="#CAC9C9" />
+            <SortedDescendingHeaderStyle BackColor="#383838" />
         </asp:GridView>
         <br />
-        <img alt="" class="auto-style2" src="" /><asp:RadioButtonList ID="RadioButtonList1" runat="server" AutoPostBack="True" CssClass="auto-style2" Font-Bold="True" Font-Size="Medium">
-            <asp:ListItem>Edit Details</asp:ListItem>
-            <asp:ListItem>Share Picture</asp:ListItem>
-        </asp:RadioButtonList>
+        <asp:Label ID="lblID" runat="server" Font-Bold="True" Font-Size="Medium" Text="Please enter PictureID:"></asp:Label>
+&nbsp;<asp:TextBox ID="txtID" runat="server" Font-Size="Medium" TextMode="Number"></asp:TextBox>
+        <br />
+        <br />
+        <asp:Button ID="btnSelect" runat="server" Text="Select" Width="100px" OnClick="btnSelect_Click1"/>
+        &nbsp;<asp:Button ID="btnDelete" runat="server" Text="Delete" Width="100px" OnClick="btnDelete_Click"/>
+        <br />
+        <br />
         <table class="auto-style4">
             <tr>
                 <td class="auto-style3">
@@ -57,7 +64,13 @@
             </tr>
         </table>
         <br />
-        <asp:Button ID="btnproceed" runat="server" Text="Proceed" Width="100px" />
+        <asp:Label ID="lblDisplay" runat="server" Font-Bold="True" Font-Size="Medium"></asp:Label>
+        <br />
+        <br />
+        <asp:Button ID="btnproceed" runat="server" OnClick="btnproceed_Click" Text="Proceed" Visible="False" Width="100px" />
+        <p>
+            <asp:Image ID="Image1" runat="server" Visible="False" />
+        </p>
     </form>
     <p>
         &nbsp;</p>

@@ -37,6 +37,7 @@ namespace Project2
             read.Read();
             Name = (read.GetString(0)) + " " + (read.GetString(1));
             con.Close();
+            Session["Rows"] = 0;
 
             if (FileUpload1.HasFile)
             {
@@ -73,7 +74,7 @@ namespace Project2
                     com = new SqlCommand(insert, con);
                     com.Parameters.AddWithValue("@PicID", id);
                     com.Parameters.AddWithValue("@UserID", UserId);
-                    com.Parameters.AddWithValue("@CapturedDate", DateTime.Today);
+                    com.Parameters.AddWithValue("@CapturedDate", DateTime.Today.ToShortDateString());
                     com.Parameters.AddWithValue("@CapturedBy", Name);
                     com.Parameters.AddWithValue("@PicName", PicName);
                     com.ExecuteNonQuery();
@@ -110,6 +111,7 @@ namespace Project2
                 txtTag.Visible = true;
                 myGrid.Visible = true;
                 btnShare.Visible = true;
+                int UserId = int.Parse(Session["UserID"].ToString());
 
                 myGrid.Visible = false;
                 myGrid.PageIndex = 0;
@@ -117,7 +119,7 @@ namespace Project2
                 con.Open();
                 ds = new DataSet();
                 adapt = new SqlDataAdapter();
-                com = new SqlCommand("Select Name, Surname, Email FROM Users", con);
+                com = new SqlCommand("Select Name, Surname, Email FROM Users Where NOT UserID = '" + UserId + "'", con);
                 adapt.SelectCommand = com;
                 adapt.Fill(ds);
 
@@ -125,6 +127,7 @@ namespace Project2
                 myGrid.DataBind();
                 con.Close();
                 myGrid.Visible = true;
+                Session["Rows"] = 0;
             }
             else if (this.radPvt.Checked)
             {
@@ -135,12 +138,13 @@ namespace Project2
                 txtLocation.Visible = true;
                 txtTag.Visible = true;
                 btnShare.Visible = true;
+                btnShare.Enabled = true;
             }
         }
 
         protected void CheckBox1_CheckedChanged(object sender, EventArgs e)
         {
-            int oldRow = int.Parse(Session["UserID"].ToString()); //Session gets assigned to a variable
+            int oldRow = int.Parse(Session["Rows"].ToString()); //Session gets assigned to a variable
             int rowind = ((GridViewRow)(sender as Control).NamingContainer).RowIndex; // rowind = number of selected textbox
 
             CheckBox cb = (CheckBox)myGrid.Rows[oldRow].FindControl("Checkbox1"); // Creates a "Independed checkbox"
@@ -272,6 +276,7 @@ namespace Project2
                 txtTag.Visible = false;
                 myGrid.Visible = false;
                 btnShare.Visible = false;
+                BtnUplaod.Enabled = true;
             }
         }
     }
