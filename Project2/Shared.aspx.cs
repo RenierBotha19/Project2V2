@@ -29,7 +29,7 @@ namespace Project2
             con.Open();
             ds = new DataSet();
             adapt = new SqlDataAdapter();
-            com = new SqlCommand("SELECT Pics.PicID, Users.Name, Users.Surname, Users.Email,Pics.CapturedDate,Pics.CapturedBy,Pics.PicName,Shared.GeoLocation,Shared.Tags FROM Users JOIN Pics ON Users.UserID = Pics.UserID JOIN Shared on Pics.PicID = Shared.PicID WHERE Shared.UserID = '"+ UserId + "'", con);
+            com = new SqlCommand("SELECT Pics.PicID, Users.Name, Users.Surname, Users.Email,Pics.CapturedDate,Pics.CapturedBy,Pics.PicName,Shared.GeoLocation,Shared.Tags FROM Users JOIN Pics ON Users.UserID = Pics.UserID JOIN Shared on Pics.PicID = Shared.PicID WHERE Shared.UserID = '"+ UserId + "'", con);// 3 Joint statements
             adapt.SelectCommand = com;
             adapt.Fill(ds);
 
@@ -71,7 +71,7 @@ namespace Project2
                     Name = (read.GetString(0));
                     con.Close();
 
-                    //Image1.ImageUrl = File.ReadAllText(Name);/////////////////////////////////////////////////////
+                    //Image1.ImageUrl = File.ReadAllText(Name);/////////////////////////////////////////////////////  NON WORKING PICTURES
                 }
                 else
                 {
@@ -97,9 +97,7 @@ namespace Project2
             com.Parameters.AddWithValue("@Tags", Tags);
             com.Parameters.AddWithValue("@PicID", PicID);
             com.ExecuteNonQuery();
-            con.Close();
-
-            lblDisplay.Text = "Update successful";
+            con.Close();// Updates the Tags & GeoLocation
 
             lblDisplay.Text = "Update successful";
 

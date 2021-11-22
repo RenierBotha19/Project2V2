@@ -39,7 +39,7 @@ namespace Project2
             con.Close();
             Session["Rows"] = 0;
 
-            if (FileUpload1.HasFile)
+            if (FileUpload1.HasFile)// Tests if the file uploader works
             {
 
                 string ext = System.IO.Path.GetExtension(FileUpload1.FileName).ToLower();
@@ -68,7 +68,7 @@ namespace Project2
                                 validNum = true;
                         }
                     } while (validNum == false);
-                    con.Close();
+                    con.Close(); // Uploads the file
 
                     con.Open();
                     com = new SqlCommand(insert, con);
@@ -127,7 +127,7 @@ namespace Project2
                 myGrid.DataBind();
                 con.Close();
                 myGrid.Visible = true;
-                Session["Rows"] = 0;
+                Session["Rows"] = 0; // Share the file
             }
             else if (this.radPvt.Checked)
             {
@@ -138,7 +138,7 @@ namespace Project2
                 txtLocation.Visible = true;
                 txtTag.Visible = true;
                 btnShare.Visible = true;
-                btnShare.Enabled = true;
+                btnShare.Enabled = true; // Private file
             }
         }
 

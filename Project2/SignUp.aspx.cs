@@ -29,7 +29,7 @@ namespace Project2
                 _result += (char)i;
             }
             return _result;
-        }
+        } // Encrypting the password
 
         protected void btnRegister_Click(object sender, EventArgs e)
         {
@@ -79,7 +79,7 @@ namespace Project2
                 }
                 else
                 {
-                    if (int.TryParse(cell, out tesv) == false)
+                    if (int.TryParse(cell, out tesv) == false)// Calidates if it is a cellphone number
                     {
                         lblDisplay.ForeColor = System.Drawing.Color.Red;
                         lblDisplay.Text = "Please enter a valid cellphone number";
@@ -106,7 +106,7 @@ namespace Project2
                                     validNum = true;
                             }
                         } while (validNum == false);
-                        con.Close();
+                        con.Close(); // Random User ID
 
 
                         string ePW = encrypt(pw);

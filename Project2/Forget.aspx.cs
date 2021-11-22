@@ -28,7 +28,7 @@ namespace Project2
                 _result += (char)i;
             }
             return _result;
-        }
+        }// decrypting code
 
         protected void btnRecover_Click(object sender, EventArgs e)
         {

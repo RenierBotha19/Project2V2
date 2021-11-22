@@ -29,7 +29,7 @@ namespace Project2
             Name = (read.GetString(0)) + " " + (read.GetString(1));
             conn.Close();
 
-            lblHeading.Text = Name + ", Please select where you would like to navigate";
+            lblHeading.Text = Name + ", Please select where you would like to navigate";// Custom Heading
 
         }
 

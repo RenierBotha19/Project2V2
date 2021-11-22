@@ -30,7 +30,7 @@ namespace Project2
                 _result += (char)i;
             }
             return _result;
-        }
+        }// Encrypting the password
 
         private void Test(string myState, string sql, string details)
         {
@@ -64,7 +64,7 @@ namespace Project2
                 txtConf.Text = "";
                 conn.Close();
             }
-        }
+        }// Method to prevent double coding
 
         private void Selection(string text1, string text2)
         {
@@ -82,7 +82,7 @@ namespace Project2
             CompareValidator1.Enabled = true;
             txtEnter.Text = "";
             txtConf.Text = "";
-        }
+        }// Activating components on the form
 
         protected void radEmail_CheckedChanged(object sender, EventArgs e)
         {
@@ -93,7 +93,7 @@ namespace Project2
                 txtEnter.TextMode = TextBoxMode.SingleLine;
                 txtConf.TextMode = TextBoxMode.SingleLine;
                 Selection("Please enter your new email:", "Please confirm your new email:");
-            }
+            }// Differnent choices
             else if (this.RadCell.Checked)
             {
                 RegularExpressionValidator1.Visible = false;
@@ -101,7 +101,7 @@ namespace Project2
                 txtEnter.TextMode = TextBoxMode.SingleLine;
                 txtConf.TextMode = TextBoxMode.SingleLine;
                 Selection("Please enter your new cellphone number:", "Please confirm your new cellphone number:");
-            }
+            }// Differnent choices
             else if (this.radPassword.Checked)
             {
                 txtEnter.TextMode = TextBoxMode.Password;
@@ -109,7 +109,7 @@ namespace Project2
                 RegularExpressionValidator1.Visible = false;
                 RegularExpressionValidator1.Enabled = false;
                 Selection("Please enter your new password:", "Please confirm your new password:");
-            }
+            }// Differnent choices
 
         }
 
@@ -119,7 +119,7 @@ namespace Project2
 
             if (radEmail.Checked)
             {
-                Test("SELECT Count(*) FROM Users WHERE Email = '" + details + "'", "Update Users SET Email = @details WHERE UserID = @userid", details);
+                Test("SELECT Count(*) FROM Users WHERE Email = '" + details + "'", "Update Users SET Email = @details WHERE UserID = @userid", details);// Update email
             }
             else if(RadCell.Checked)
             {
@@ -139,7 +139,7 @@ namespace Project2
                 }
                 else
                 {
-                    Test("SELECT Count(*) FROM Users WHERE CellNr = '" + details + "'", "Update Users SET CellNr = @details WHERE UserID = @userid", details);
+                    Test("SELECT Count(*) FROM Users WHERE CellNr = '" + details + "'", "Update Users SET CellNr = @details WHERE UserID = @userid", details);// Update cellphone number
                 }
             }
             else if(radPassword.Checked)
@@ -154,7 +154,7 @@ namespace Project2
                 else
                 {
                     details = encrypt(txtConf.Text);
-                    Test("SELECT Count(*) FROM Users WHERE Password = '" + details + "'", "Update Users SET Password = @details WHERE UserID = @userid", details);
+                    Test("SELECT Count(*) FROM Users WHERE Password = '" + details + "'", "Update Users SET Password = @details WHERE UserID = @userid", details);// Update encrypted Password
                 }
             }
         }

@@ -27,11 +27,11 @@ namespace Project2
                 _result += (char)i;
             }
             return _result;
-        }
+        }// Encrypting the password
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            Session["MyDB"] = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\Documents\IT2021\SEM2\CMPG323\Pro2\Project2\Project2\App_Data\MyDB.mdf;Integrated Security=True";
+            Session["MyDB"] = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\Documents\IT2021\SEM2\CMPG323\Pro2\Project2\Project2\App_Data\MyDB.mdf;Integrated Security=True";// Local DB
         }
 
         protected void btnLogin_Click(object sender, EventArgs e)
